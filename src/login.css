@@ -222,7 +222,6 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .continue-button:hover {
   background: #e83260;
 }
