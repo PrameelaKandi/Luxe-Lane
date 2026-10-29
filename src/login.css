@@ -1,349 +1,419 @@
+/* ================================
+   LUXE LANE - LOGIN PAGE CSS
+================================ */
+
+* {
+  box-sizing: border-box;
+}
 
 .login-page {
   min-height: 100vh;
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 32px 16px;
-  background: linear-gradient(135deg, #fff0f5 0%, #fff7ed 100%);
+  padding: 35px 16px;
+  background: linear-gradient(135deg, #fff1f5, #f5f2ff, #fff8f0);
   font-family: Arial, Helvetica, sans-serif;
-  color: #424553;
 }
+
+/* Main Login Card */
 
 .login-card {
   width: 100%;
-  max-width: 430px;
-  min-height: 630px;
-  background: #fff;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
+  max-width: 440px;
+  background: #ffffff;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: 0 12px 45px rgba(35, 20, 40, 0.14);
+  border: 1px solid #f0e9ee;
 }
 
+/* Offer Banner */
+
 .login-offer-banner {
-  height: 171px;
-  width: 100%;
+  height: 215px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(110deg, #ffdfd1, #ffd2c4 60%, #f7b4a7);
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  background: linear-gradient(120deg, #fce7f3, #f5d0fe, #fbcfe8);
 }
 
 .offer-copy {
-  position: absolute;
+  position: relative;
   z-index: 2;
-  top: 23px;
-  left: 22px;
-  color: #f23ba4;
+  max-width: 65%;
 }
 
 .offer-sparkle {
-  position: absolute;
-  top: -4px;
-  right: -20px;
-  font-size: 24px;
-  color: #ff8aab;
+  display: inline-block;
+  font-size: 25px;
+  color: #a21caf;
+  margin-bottom: 5px;
 }
 
 .offer-copy h1 {
+  margin: 0;
+  color: #64134f;
   font-size: 31px;
-  line-height: 0.95;
-  letter-spacing: -1px;
   font-weight: 900;
+  line-height: 1.12;
+  letter-spacing: -0.8px;
 }
 
 .offer-copy p {
-  font-size: 10px;
+  margin: 9px 0;
+  font-size: 11px;
   font-weight: 800;
-  margin-top: 8px;
+  letter-spacing: 1.3px;
+  color: #7e225e;
 }
 
 .offer-code {
   display: inline-block;
-  margin-top: 7px;
-  padding: 5px 9px;
-  background: #ff3f9b;
-  color: #fff;
+  padding: 7px 10px;
+  border: 1px dashed #a21caf;
+  border-radius: 4px;
   font-size: 10px;
-  font-weight: 800;
-}
-
-.offer-model {
-  position: absolute;
-  height: 145px;
-  width: 185px;
-  object-fit: cover;
-  object-position: center;
-  right: 18px;
-  bottom: 0;
-  mix-blend-mode: multiply;
+  font-weight: bold;
+  color: #701a55;
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .offer-discount {
   position: absolute;
   z-index: 3;
-  top: 0;
-  right: 16px;
-  width: 72px;
-  height: 76px;
-  border-radius: 0 0 35px 35px;
-  background: #f33ca1;
-  color: white;
+  right: 18px;
+  top: 15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #e11d74;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  font-size: 19px;
-  line-height: 1.1;
+  box-shadow: 0 5px 15px rgba(100, 19, 79, 0.15);
+  transform: rotate(8deg);
+}
+
+.offer-discount span {
+  font-size: 16px;
+  font-weight: 900;
 }
 
 .offer-discount strong {
-  font-size: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.offer-model {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%);
+  mask-image: linear-gradient(to right, transparent 0%, black 35%);
 }
 
 .offer-disclaimer {
   position: absolute;
+  left: 24px;
+  bottom: 8px;
   z-index: 4;
-  right: 8px;
-  bottom: 5px;
-  color: #7d5254;
-  font-size: 7px;
+  font-size: 8px;
+  color: #7e225e;
 }
 
+/* Login Content */
+
 .login-content {
-  padding: 40px 38px 36px;
+  padding: 30px 28px 24px;
 }
 
 .login-content h2 {
-  font-size: 21px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  color: #424553;
+  margin: 0 0 10px;
+  color: #28212a;
+  font-size: 23px;
+  font-weight: 800;
 }
 
 .login-content h2 span {
-  font-size: 16px;
+  color: #77717b;
   font-weight: 400;
 }
 
 .login-description {
-  display: none;
+  margin: 0 0 25px;
+  color: #77717b;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
+/* Mobile Number Input */
+
 .mobile-input {
+  width: 100%;
+  height: 48px;
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 44px;
+  gap: 11px;
   padding: 0 12px;
-  border: 1px solid #d4d5d9;
-  margin-bottom: 27px;
-  transition: border-color 0.2s;
+  border: 1px solid #d8d1d9;
+  border-radius: 5px;
+  background: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .mobile-input:focus-within {
-  border-color: #ff3f6c;
+  border-color: #e11d74;
+  box-shadow: 0 0 0 3px rgba(225, 29, 116, 0.09);
 }
 
 .country-code {
-  white-space: nowrap;
-  color: #777b89;
   font-size: 14px;
+  font-weight: 700;
+  color: #29232c;
+  white-space: nowrap;
 }
 
 .input-divider {
-  color: #d1d1d6;
-  margin: 0 9px;
+  color: #c5bdc7;
+  font-size: 20px;
 }
 
 .mobile-input input {
+  min-width: 0;
   flex: 1;
-  width: 0;
+  height: 100%;
+  padding: 0;
   border: none;
   outline: none;
   background: transparent;
-  color: #282c3f;
+  font-family: inherit;
   font-size: 14px;
+  color: #29232c;
 }
 
 .mobile-input input::placeholder {
-  color: #9699a5;
+  color: #aaa2ad;
 }
 
 .required-star {
-  color: #ff3f6c;
-  font-size: 15px;
+  color: #e11d74;
+  font-size: 18px;
 }
+
+/* Terms and Privacy */
 
 .terms-row {
   display: flex;
   align-items: flex-start;
-  gap: 13px;
-  color: #535766;
-  font-size: 14px;
-  line-height: 1.6;
+  gap: 9px;
+  margin: 18px 0;
+  color: #77717b;
+  font-size: 11px;
+  line-height: 1.7;
   cursor: pointer;
 }
 
 .terms-row input {
-  width: 14px;
-  height: 14px;
   flex-shrink: 0;
-  margin-top: 5px;
-  accent-color: #ff3f6c;
+  width: 15px;
+  height: 15px;
+  margin: 2px 0 0;
+  accent-color: #e11d74;
   cursor: pointer;
 }
 
 .terms-row a {
-  color: #ff3f6c;
-  text-decoration: none;
+  color: #e11d74;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .terms-row a:hover {
   text-decoration: underline;
 }
 
+/* Error Message */
+
 .login-error {
-  color: #d83251;
+  margin: 10px 0;
+  color: #d62828;
   font-size: 12px;
   line-height: 1.5;
-  margin-top: 12px;
 }
+
+/* Continue Button */
 
 .continue-button {
   width: 100%;
-  height: 44px;
-  margin-top: 22px;
-  background: #ff3f6c;
-  color: #fff;
+  min-height: 47px;
+  padding: 12px;
   border: none;
-  font-size: 14px;
-  font-weight: 700;
+  border-radius: 5px;
+  background: #e11d74;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
   cursor: pointer;
-  transition: background 0.2s;
-}
-.continue-button:hover {
-  background: #e83260;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
 }
 
+.continue-button:hover {
+  background: #c2185b;
+  box-shadow: 0 5px 14px rgba(225, 29, 116, 0.2);
+}
+
+.continue-button:active {
+  transform: scale(0.99);
+}
+
+/* Help Text */
+
 .help-text {
-  margin-top: 33px;
-  font-size: 13px;
-  color: #535766;
+  margin: 22px 0 0;
+  text-align: center;
+  color: #77717b;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .help-text button {
-  background: transparent;
+  padding: 0;
   border: none;
-  color: #ff3f6c;
+  background: transparent;
+  color: #e11d74;
+  font-family: inherit;
+  font-size: 12px;
   font-weight: 700;
   cursor: pointer;
-  font-size: inherit;
 }
 
-.otp-content {
-  text-align: center;
-  padding-top: 10px;
+.help-text button:hover {
+  text-decoration: underline;
 }
 
-.otp-content h2 {
-  margin: 16px 0;
-}
-
-.otp-content p {
-  font-size: 14px;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
-}
-
-.otp-icon {
-  display: grid;
-  place-items: center;
-  width: 55px;
-  height: 55px;
-  margin: 0 auto;
-  border-radius: 50%;
-  background: #e4f8e9;
-  color: #218545;
-  font-size: 28px;
-}
-
-.otp-note {
-  margin-top: 15px;
-  color: #777b89;
-}
+/* Footer */
 
 .login-footer {
+  min-height: 45px;
+  padding: 12px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  padding: 16px 22px;
-  border-top: 1px solid #f1f1f3;
-  color: #858795;
+  border-top: 1px solid #f0e9ee;
+  background: #fffafd;
+  color: #9b8e9a;
   font-size: 9px;
-  letter-spacing: 0.5px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
 }
 
-@media (min-width: 768px) {
-  .login-page {
-    min-height: calc(100vh - 80px);
-    padding-top: 32px;
-  }
-
-  .login-card {
-    min-height: 630px;
-  }
-}
+/* Responsive Design */
 
 @media (max-width: 480px) {
   .login-page {
-    padding: 18px 12px;
+    padding: 20px 12px;
   }
 
   .login-card {
-    min-height: 590px;
+    max-width: 100%;
+    border-radius: 10px;
   }
 
   .login-offer-banner {
-    height: 150px;
+    height: 190px;
+    padding: 18px;
   }
 
   .offer-copy {
-    top: 22px;
-    left: 16px;
+    max-width: 65%;
   }
 
   .offer-copy h1 {
-    font-size: 27px;
+    font-size: 26px;
   }
 
-  .offer-model {
-    width: 145px;
-    height: 125px;
-    right: 4px;
+  .offer-copy p {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .offer-code {
+    padding: 6px 7px;
+    font-size: 9px;
   }
 
   .offer-discount {
-    right: 8px;
-    width: 57px;
-    height: 64px;
-    font-size: 15px;
+    width: 54px;
+    height: 54px;
+    right: 10px;
+    top: 10px;
   }
 
-  .offer-discount strong {
-    font-size: 17px;
+  .offer-discount span {
+    font-size: 13px;
+  }
+
+  .offer-model {
+    width: 45%;
+  }
+
+  .offer-disclaimer {
+    left: 18px;
+    font-size: 7px;
   }
 
   .login-content {
-    padding: 32px 23px;
+    padding: 25px 20px 22px;
   }
 
   .login-content h2 {
-    font-size: 20px;
+    font-size: 21px;
+  }
+
+  .login-footer {
+    padding: 12px;
+    font-size: 8px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 350px) {
+  .offer-copy h1 {
+    font-size: 22px;
+  }
+
+  .offer-code {
+    font-size: 8px;
+  }
+
+  .offer-discount {
+    width: 48px;
+    height: 48px;
+  }
+
+  .login-content {
+    padding: 22px 15px;
   }
 
   .terms-row {
-    font-size: 13px;
+    font-size: 10px;
+  }
+
+  .login-footer {
+    font-size: 7px;
   }
 }
