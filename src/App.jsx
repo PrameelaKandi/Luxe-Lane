@@ -53,6 +53,9 @@ function App() {
   const [selectedSize, setSelectedSize] = useState("M");
   const [page, setPage] = useState("home");
   const [showLogin, setShowLogin] = useState(false);
+  const [loggedInMobile, setLoggedInMobile] = useState(() =>
+    localStorage.getItem("luxeLaneUser") || ""
+  );
   const [notice, setNotice] = useState("");
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [orderPlaced, setOrderPlaced] = useState(false);
@@ -102,6 +105,21 @@ function App() {
   };
 
   const showMessage = (message) => setNotice(message);
+
+  const handleLoginSuccess = (mobile) => {
+    localStorage.setItem("luxeLaneUser", mobile);
+    setLoggedInMobile(mobile);
+    setShowLogin(false);
+    showMessage("Login successful!");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("luxeLaneUser");
+    setLoggedInMobile("");
+    setShowLogin(false);
+    goHome();
+    showMessage("You have been logged out.");
+  };
 
   const openProduct = (product) => {
     setSelectedProduct(product);
@@ -213,8 +231,8 @@ function App() {
     );
   };
 
-  if (showLogin) {
-    return <Login onLoginSuccess={() => setShowLogin(false)} />;
+  if (showLogin && !loggedInMobile) {
+    return <Login onLoginSuccess={handleLoginSuccess} />;
   }
 
   return (
@@ -268,7 +286,11 @@ function App() {
           <button onClick={() => setPage("bag")}>
             🛍 <span>Bag</span> ({bagCount})
           </button>
-          <button onClick={() => setShowLogin(true)}>👤 Login</button>
+          {loggedInMobile ? (
+            <button onClick={handleLogout}>👤 Logout</button>
+          ) : (
+            <button onClick={() => setShowLogin(true)}>👤 Login</button>
+          )}
         </div>
       </header>
 

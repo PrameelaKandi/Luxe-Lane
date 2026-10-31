@@ -22,15 +22,19 @@ function Login({ onLoginSuccess }) {
 
     setError("");
 
-    // Login demo successful: return to the homepage
+    // Save login details
+    localStorage.setItem("luxeLaneUser", mobile);
+
+    // Notify App.jsx about successful login
     if (onLoginSuccess) {
-      onLoginSuccess();
+      onLoginSuccess(mobile);
     }
   }
 
   return (
     <div className="login-page">
       <div className="login-card">
+
         <div className="login-offer-banner">
           <div className="offer-copy">
             <span className="offer-sparkle">✦</span>
@@ -138,6 +142,7 @@ function Login({ onLoginSuccess }) {
           <span>YOUR STYLE. YOUR RULES.</span>
           <span>FASHION STORE © 2026</span>
         </div>
+
       </div>
     </div>
   );
